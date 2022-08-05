@@ -49,6 +49,7 @@ public class ServletLogin extends HttpServlet {
                         modelLogin = daoUsuarioRepository.consultaUsuarioLogado(login);
 
                         request.getSession().setAttribute("usuario", modelLogin.getLogin());
+                        request.getSession().setAttribute("modelLogin", modelLogin);
 
                         if (url == null || url.equals("null")) {
                             url = "principal/principal.jsp";
@@ -69,7 +70,7 @@ public class ServletLogin extends HttpServlet {
             e.printStackTrace();
 
             request.setAttribute("msg", e.getMessage());
-            request.getRequestDispatcher("erro.jsp").forward(request, response);
+            request.getRequestDispatcher("404.jsp").forward(request, response);
         }
     }
 }

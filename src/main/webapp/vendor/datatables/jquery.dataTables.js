@@ -4060,7 +4060,7 @@
 			order:   [],
 			start:   displayStart,
 			length:  displayLength,
-			search:  {
+			Buscar:  {
 				value: preSearch.sSearch,
 				regex: preSearch.bRegex
 			}
@@ -4076,7 +4076,7 @@
 				name:       column.sName,
 				searchable: column.bSearchable,
 				orderable:  column.bSortable,
-				search:     {
+				Buscar:     {
 					value: columnSearch.sSearch,
 					regex: columnSearch.bRegex
 				}
@@ -4601,7 +4601,7 @@
 	function _fnSearchToCamel ( obj )
 	{
 		return {
-			search:          obj.sSearch,
+			Buscar:          obj.sSearch,
 			smart:           obj.bSmart,
 			regex:           obj.bRegex,
 			caseInsensitive: obj.bCaseInsensitive
@@ -4620,7 +4620,7 @@
 	function _fnSearchToHung ( obj )
 	{
 		return {
-			sSearch:          obj.search,
+			sBuscar:          obj.search,
 			bSmart:           obj.smart,
 			bRegex:           obj.regex,
 			bCaseInsensitive: obj.caseInsensitive
@@ -6353,11 +6353,11 @@
 			start:   settings._iDisplayStart,
 			length:  settings._iDisplayLength,
 			order:   $.extend( true, [], settings.aaSorting ),
-			search:  _fnSearchToCamel( settings.oPreviousSearch ),
+			Buscar:  _fnSearchToCamel( settings.oPreviousSearch ),
 			columns: $.map( settings.aoColumns, function ( col, i ) {
 				return {
 					visible: col.bVisible,
-					search: _fnSearchToCamel( settings.aoPreSearchCols[i] )
+					Buscar: _fnSearchToCamel( settings.aoPreSearchCols[i] )
 				};
 			} )
 		};
@@ -7813,7 +7813,7 @@
 		}
 	
 		return $.extend( {
-			search: 'none',
+			Buscar: 'none',
 			order: 'current',
 			page: 'all'
 		}, opts );
@@ -11756,7 +11756,7 @@
 			 * control over where it appears in the string. If "_INPUT_" is not given
 			 * then the input box is appended to the string automatically.
 			 *  @type string
-			 *  @default Search:
+			 *  @default search:
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.search
@@ -11781,7 +11781,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Buscar:",
 	
 	
 			/**
@@ -14072,7 +14072,7 @@
 		 *      }
 		 *    );
 		 */
-		search: [],
+		Buscar: [],
 	
 	
 		/**
@@ -14324,7 +14324,7 @@
 			 *      return d.replace(/\n/g," ").replace( /<.*?>/g, "" );
 			 *    }
 			 */
-			search: {},
+			Buscar: {},
 	
 	
 			/**
@@ -14449,7 +14449,7 @@
 	$.extend( _ext, {
 		afnFiltering: _ext.search,
 		aTypes:       _ext.type.detect,
-		ofnSearch:    _ext.type.search,
+		ofnBuscar:    _ext.type.search,
 		oSort:        _ext.type.order,
 		afnSortData:  _ext.order,
 		aoFeatures:   _ext.feature,
@@ -15149,7 +15149,7 @@
 		_fnFilterCustom: _fnFilterCustom,
 		_fnFilterColumn: _fnFilterColumn,
 		_fnFilter: _fnFilter,
-		_fnFilterCreateSearch: _fnFilterCreateSearch,
+		_fnFilterCreateBuscar: _fnFilterCreateSearch,
 		_fnEscapeRegex: _fnEscapeRegex,
 		_fnFilterData: _fnFilterData,
 		_fnFeatureHtmlInfo: _fnFeatureHtmlInfo,

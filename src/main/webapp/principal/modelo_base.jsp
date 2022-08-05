@@ -29,7 +29,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <jsp:include page="sidebar.jsp"></jsp:include>
+    <jsp:include page="<%= request.getContextPath() %>/sidebar.jsp"></jsp:include>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -63,7 +63,7 @@
                 -->
 
                 <!-- Topbar Navbar -->
-                <jsp:include page="navbar.jsp"></jsp:include>
+                <jsp:include page="<%= request.getContextPath() %>/navbar.jsp"></jsp:include>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -165,76 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Inserir dados aqui -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista de clientes ativos</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover w-100" id="dataTable">
-                                <thead class="thead-light">
-                                <tr>
-                                    <th>#Id</th>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Opções</th>
-                                </tr>
-                                </thead>
-                                <!--
-                                <tfoot>
-                                <tr>
-                                    <th>#Id</th>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Opções</th>
-                                </tr>
-                                </tfoot>
-                                -->
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>There are many</td>
-                                    <td>email@email.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="#"  class="mr-2 text-primary" data-toggle="tooltip" data-placement="bottom" title="Visualizar"><i class="fas fa-eye"></i></a>
-                                            <a href="#" class="mr-2 text-secondary" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pen"></i></a>
-                                            <a href="#"  class="mr-2 text-danger" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="fas fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>don't look even</td>
-                                    <td>email@email.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="#"  class="mr-2 text-primary" data-toggle="tooltip" data-placement="bottom" title="Visualizar"><i class="fas fa-eye"></i></a>
-                                            <a href="#" class="mr-2 text-secondary" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pen"></i></a>
-                                            <a href="#"  class="mr-2 text-danger" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="fas fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>opposed to using</td>
-                                    <td>email@email.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="#"  class="mr-2 text-primary" data-toggle="tooltip" data-placement="bottom" title="Visualizar"><i class="fas fa-eye"></i></a>
-                                            <a href="#" class="mr-2 text-secondary" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pen"></i></a>
-                                            <a href="#"  class="mr-2 text-danger" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="fas fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-
                 <!-- Content Row
 
                     verificar.jsp
@@ -244,15 +174,13 @@
             <!-- /.container-fluid -->
 
         </div>
-
-
         <!-- End of Main Content -->
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; SysGym Administrativo 2022</span>
+                    <span>Copyright &copy; Your Website 2021</span>
                 </div>
             </div>
         </footer>
@@ -290,7 +218,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<jsp:include page="javascriptfile.jsp"></jsp:include>
+<script src="<%= request.getContextPath()%>/vendor/jquery/jquery.min.js"></script>
+<script src="<%= request.getContextPath()%>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<%= request.getContextPath()%>/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="<%= request.getContextPath()%>/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="<%= request.getContextPath()%>/vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<%= request.getContextPath()%>/js/demo/chart-area-demo.js"></script>
+<script src="<%= request.getContextPath()%>/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

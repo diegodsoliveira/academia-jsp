@@ -49,7 +49,7 @@ public class FilterAutenticacao implements Filter {
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("msg", e.getMessage());
-            request.getRequestDispatcher("erro.jsp").forward(request, response);
+            request.getRequestDispatcher("404.jsp").forward(request, response);
 
             try {
                 conexaoBanco.rollback();
